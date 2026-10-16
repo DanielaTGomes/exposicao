@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais de Lisboa - Exposição</title>
+    
+    <!-- Ligação ao ficheiro CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. ECRÃ DO MENU INICIAL -->
+    <div id="menu-screen">
+        <div class="header">
+            <div class="titles">
+                <h1>Animais de Lisboa</h1>
+                <h2>Outra história da cidade</h2>
+            </div>
+            
+            <!-- Logótipo do Pássaro (Podes substituir este <svg> por <img src="teu-logo.png" class="logo-container">) -->
+            <svg class="logo-container" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 10 H45 L50 15 H110 C110 38 95 48 75 48 L80 53 H112 C98 78 65 82 45 68 C32 58 28 42 28 28 L5 10 Z" fill="#050505"/>
+                <circle cx="38" cy="18" r="3" fill="#6c75b7"/>
+                <polygon points="55,80 45,92 65,92" fill="#050505"/>
+            </svg>
+        </div>
+
+        <div class="choices-container">
+            <button class="circle-btn" onclick="abrirAplicacao('mapa')">
+                Mapa Animais
+            </button>
+            <button class="circle-btn" onclick="abrirAplicacao('tag')">
+                Tag Animalx
+            </button>
+        </div>
+    </div>
+
+    <!-- 2. ECRÃ DE EXIBIÇÃO (ONDE CARREGA O MAPA OU O TAG ANIMALX) -->
+    <div id="app-container">
+        <button id="back-btn" onclick="voltarAoMenu()">
+            <span>⬅</span> Voltar ao Menu da Exposição
+        </button>
+        <iframe id="app-frame" src=""></iframe>
+    </div>
+
+    <!-- Ligação ao ficheiro JavaScript externo -->
+    <script src="script.js"></script>
+
+</body>
+</html>
