@@ -12,28 +12,50 @@
 
     <!-- 1. ECRÃ DO MENU INICIAL -->
     <div id="menu-screen">
-        <div class="header">
+        
+        <!-- Imagem decorativa das pegadas (se tiveres exportado as pegadas como um PNG transparente) -->
+        <!-- Se não tiveres um ficheiro separado para as pegadas, podes comentar ou ajustar o src abaixo -->
+        <img src="animalx_patas.png" class="footprints-bg" alt="">
+
+        <!-- CABEÇALHO -->
+        <header class="header">
             <div class="titles">
-                <h1>Animais de Lisboa</h1>
-                <h2>Outra história da cidade</h2>
+                <h1>
+                    <span class="title-bold">Animais de Lisboa:</span> 
+                    <span class="title-light">Outra história da cidade</span>
+                </h1>
+                <p class="subtitle-desc">
+                    Breve descrição sobre os recursos que os utilizadores<br>podem explorar.
+                </p>
             </div>
             
-            <!-- Logótipo do Pássaro (Podes substituir este <svg> por <img src="teu-logo.png" class="logo-container">) -->
-            <svg class="logo-container" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 10 H45 L50 15 H110 C110 38 95 48 75 48 L80 53 H112 C98 78 65 82 45 68 C32 58 28 42 28 28 L5 10 Z" fill="#050505"/>
-                <circle cx="38" cy="18" r="3" fill="#6c75b7"/>
-                <polygon points="55,80 45,92 65,92" fill="#050505"/>
-            </svg>
-        </div>
+            <!-- Logótipos no Canto Superior Direito -->
+            <div class="logos-container">
+                <img src="logo_ml.png" alt="Museu de Lisboa" class="logo-museu">
+                <img src="logo_completo_preto.png" alt="Animalx" class="logo-animalx">
+            </div>
+        </header>
 
-        <div class="choices-container">
-            <button class="circle-btn" onclick="abrirAplicacao('mapa')">
-                Mapa Animais
-            </button>
-            <button class="circle-btn" onclick="abrirAplicacao('tag')">
-                Tag Animalx
-            </button>
-        </div>
+        <!-- ÁREA CENTRAL: AS DUAS FERRAMENTAS -->
+        <main class="choices-container">
+            
+            <!-- Opção 1: Mapa Digital -->
+            <div class="choice-item" onclick="abrirAplicacao('mapa')">
+                <div class="circle-frame">
+                    <img src="mapa.png" alt="Mapa Digital">
+                </div>
+                <span class="choice-label">Mapa Digital</span>
+            </div>
+
+            <!-- Opção 2: Tag ANIMALx -->
+            <div class="choice-item" onclick="abrirAplicacao('tag')">
+                <div class="circle-frame">
+                    <img src="tag.png" alt="Tag ANIMALx">
+                </div>
+                <span class="choice-label">Tag ANIMALx</span>
+            </div>
+
+        </main>
     </div>
 
     <!-- 2. ECRÃ DE EXIBIÇÃO (ONDE CARREGA O MAPA OU O TAG ANIMALX) -->
@@ -41,7 +63,7 @@
         <button id="back-btn" onclick="voltarAoMenu()">
             <span>⬅</span> Voltar ao Menu da Exposição
         </button>
-        <iframe id="app-frame" src=""></iframe>
+        <iframe id="app-frame" src="" allow="fullscreen"></iframe>
     </div>
 
     <!-- Ligação ao ficheiro JavaScript externo -->
