@@ -58,14 +58,12 @@ body, html {
 ========================================= */
 #menu-screen {
     position: relative;
-    /* Tranca o layout na resolução nativa da exposição (1920x1080) */
     width: 1920px !important;
     min-width: 1920px !important;
     max-width: 1920px !important;
     height: 1080px !important;
     min-height: 1080px !important;
     max-height: 1080px !important;
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -73,6 +71,71 @@ body, html {
     z-index: 1;
     transform-origin: center center;
     flex-shrink: 0;
+}
+
+/* Pegadas decorativas em pano de fundo (RESTAURADO) */
+.footprints-bg {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* CABEÇALHO: Títulos à esquerda + Logos à direita (RESTAURADO) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    z-index: 2;
+}
+
+.titles h1 {
+    font-size: 46px;
+    color: #000000;
+    margin-bottom: 16px;
+    line-height: 1.15;
+}
+
+.titles .title-bold {
+    font-weight: 700;
+}
+
+.titles .title-light {
+    font-weight: 400;
+    font-size: 36px;
+}
+
+.subtitle-desc {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.4;
+    max-width: 600px;
+}
+
+/* Contentor dos 2 Logótipos no topo direito (RESTAURADO) */
+.logos-container {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.logo-museu {
+    height: 85px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-animalx {
+    height: 95px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* =========================================
