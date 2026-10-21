@@ -13,8 +13,7 @@
     <!-- 1. ECRÃ DO MENU INICIAL -->
     <div id="menu-screen">
         
-        <!-- Imagem decorativa das pegadas (se tiveres exportado as pegadas como um PNG transparente) -->
-        <!-- Se não tiveres um ficheiro separado para as pegadas, podes comentar ou ajustar o src abaixo -->
+        <!-- Imagem decorativa das pegadas -->
         <img src="animalx_patas.png" class="footprints-bg" alt="">
 
         <!-- CABEÇALHO -->
@@ -29,8 +28,9 @@
                 </p>
             </div>
             
-            <!-- Logótipos no Canto Superior Direito -->
+            <!-- 3 Logótipos no Canto Superior Direito: Lisboa Cultura -> Museu de Lisboa -> Animalx -->
             <div class="logos-container">
+                <img src="logo_lc.jpg" alt="Lisboa Cultura" class="logo-lc">
                 <img src="logo_ml.png" alt="Museu de Lisboa" class="logo-museu">
                 <img src="logo_completo_preto.png" alt="Animalx" class="logo-animalx">
             </div>
@@ -58,7 +58,7 @@
         </main>
     </div>
 
-    <!-- 2. ECRÃ DE EXIBIÇÃO  -->
+    <!-- 2. ECRÃ DE EXIBIÇÃO (ONDE CARREGA O MAPA OU O TAG ANIMALX) -->
     <div id="app-container">
         <button id="back-btn" onclick="voltarAoMenu()">
             <span>⬅</span> Voltar ao Menu da Exposição
@@ -68,11 +68,18 @@
 
     <!-- Ligação ao ficheiro JavaScript externo -->
     <script src="script.js"></script>
+
+    <!-- MOTOR DE ESCALA UNIVERSAL CALIBRADO PELA IMAGEM 2 (Base 1440x810 - Proporção 16:9) -->
     <script>
     function ajustarEscalaMenuExposicao() {
         const menu = document.getElementById('menu-screen');
-        const escalaX = window.innerWidth / 1920;
-        const escalaY = window.innerHeight / 1080;
+        
+        // Dimensões exatas onde o layout tem as proporções da tua Imagem 2
+        const larguraBase = 1440;
+        const alturaBase = 810;
+
+        const escalaX = window.innerWidth / larguraBase;
+        const escalaY = window.innerHeight / alturaBase;
         const escala = Math.min(escalaX, escalaY);
 
         if (menu) {
