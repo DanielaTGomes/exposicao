@@ -114,7 +114,7 @@ body, html {
     font-weight: 400;
     color: #000000;
     line-height: 1.4;
-    max-width: 580px;
+    max-width: 100%;
 }
 
 /* Contentor dos 3 Logótipos no topo direito (Ajustado para caberem os 3) */
@@ -130,9 +130,6 @@ body, html {
     height: 78px; /* Compensa a margem interna da imagem quadrada */
     width: auto;
     object-fit: contain;
-    /* Caso uses o logo_lc.jpg com fundo preto, estas 2 linhas eliminam o fundo preto e deixam as letras pretas! */
-    filter: invert(1) grayscale(1) contrast(500%) invert(1);
-    mix-blend-mode: multiply;
 }
 
 /* 2º Logo: Museu de Lisboa */
