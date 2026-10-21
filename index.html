@@ -68,6 +68,35 @@
 
     <!-- Ligação ao ficheiro JavaScript externo -->
     <script src="script.js"></script>
+    <!-- Ligação ao ficheiro JavaScript externo -->
+    <script src="script.js"></script>
 
+    <!-- MOTOR DE ESCALA UNIVERSAL DO MENU DA EXPOSIÇÃO (Base 1920x1080) -->
+    <script>
+    function ajustarEscalaMenuExposicao() {
+        const menu = document.getElementById('menu-screen');
+        const backBtn = document.getElementById('back-btn');
+        
+        const larguraBase = 1920;
+        const alturaBase = 1080;
+
+        const escalaX = window.innerWidth / larguraBase;
+        const escalaY = window.innerHeight / alturaBase;
+        const escala = Math.min(escalaX, escalaY);
+
+        if (menu) {
+            menu.style.transform = `scale(${escala})`;
+        }
+        
+        // Escala também o botão de voltar proporcionalmente ao monitor
+        if (backBtn) {
+            backBtn.style.zoom = escala;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', ajustarEscalaMenuExposicao);
+    window.addEventListener('resize', ajustarEscalaMenuExposicao);
+    document.addEventListener('fullscreenchange', ajustarEscalaMenuExposicao);
+    </script>
 </body>
 </html>
