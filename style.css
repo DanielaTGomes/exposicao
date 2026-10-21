@@ -31,7 +31,7 @@
 }
 
 /* =========================================
-   1. ESTILOS GERAIS E RESET (MODO QUIOSQUE)
+   1. ESTILOS GERAIS E RESET (MODO QUIOSQUE UNIVERSAL)
 ========================================= */
 * {
     box-sizing: border-box;
@@ -47,85 +47,32 @@ body, html {
     background-color: #6c75b7; /* Roxo/azul oficial do projeto */
     font-family: 'Nohemi', sans-serif;
     color: #000000;
+    /* Centra o palco de 1920x1080 em qualquer ecrã */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* =========================================
-   2. ECRÃ DO MENU PRINCIPAL (PROTÓTIPO)
+   2. ECRÃ DO MENU PRINCIPAL (FIXADO EM 1920x1080 E ESCALÁVEL)
 ========================================= */
 #menu-screen {
     position: relative;
-    width: 100%;
-    height: 100%;
+    /* Tranca o layout na resolução nativa da exposição (1920x1080) */
+    width: 1920px !important;
+    min-width: 1920px !important;
+    max-width: 1920px !important;
+    height: 1080px !important;
+    min-height: 1080px !important;
+    max-height: 1080px !important;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 50px 90px;
     z-index: 1;
-}
-
-/* Pegadas decorativas em pano de fundo */
-.footprints-bg {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 1920px;
-    height: auto;
-    pointer-events: none; /* Garante que não bloqueia os cliques nos círculos */
-    z-index: -1;
-}
-
-/* CABEÇALHO: Títulos à esquerda + Logos à direita */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    z-index: 2;
-}
-
-.titles h1 {
-    font-size: 46px;
-    color: #000000;
-    margin-bottom: 16px;
-    line-height: 1.15;
-}
-
-.titles .title-bold {
-    font-weight: 700; /* Negrito para "Animais de Lisboa:" */
-}
-
-.titles .title-light {
-    font-weight: 400; /* Peso regular/leve para "Outra história da cidade" */
-    font-size: 36px;
-}
-
-.subtitle-desc {
-    font-size: 20px;
-    font-weight: 400;
-    color: #000000;
-    line-height: 1.4;
-    max-width: 600px;
-}
-
-/* Contentor dos 2 Logótipos no topo direito */
-.logos-container {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-}
-
-.logo-museu {
-    height: 85px; /* Ajusta conforme a proporção do teu ficheiro */
-    width: auto;
-    object-fit: contain;
-}
-
-.logo-animalx {
-    height: 95px; /* Ajusta conforme a proporção do teu ficheiro */
-    width: auto;
-    object-fit: contain;
+    transform-origin: center center;
+    flex-shrink: 0;
 }
 
 /* =========================================
