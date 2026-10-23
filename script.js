@@ -52,3 +52,11 @@ function voltarAoMenu() {
     appContainer.style.display = 'none';
     menu.style.display = 'flex';
 }
+
+document.body.addEventListener('click', function() {
+    if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log('Erro de ecrã inteiro:', err.message);
+        });
+    }
+}, { once: true });

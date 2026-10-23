@@ -3,28 +3,28 @@
 ========================================= */
 @font-face {
     font-family: 'Nohemi';
-    src: local('Nohemi Light'), local('Nohemi-Light'), url('fonts/Nohemi-Light.woff2') format('woff2');
+    src: local('Nohemi Light'), local('Nohemi-Light'), url('fonts/Nohemi-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Nohemi';
-    src: local('Nohemi Regular'), local('Nohemi-Regular'), url('fonts/Nohemi-Regular.woff2') format('woff2');
+    src: local('Nohemi Regular'), local('Nohemi-Regular'), url('fonts/Nohemi-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Nohemi';
-    src: local('Nohemi SemiBold'), local('Nohemi-SemiBold'), url('fonts/Nohemi-SemiBold.woff2') format('woff2');
+    src: local('Nohemi SemiBold'), local('Nohemi-SemiBold'), url('fonts/Nohemi-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Nohemi';
-    src: local('Nohemi Bold'), local('Nohemi-Bold'), url('fonts/Nohemi-Bold.woff2') format('woff2');
+    src: local('Nohemi Bold'), local('Nohemi-Bold'), url('fonts/Nohemi-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -45,7 +45,7 @@ body, html {
     overflow: hidden;
     background-color: #6c75b7; /* Roxo/azul oficial do projeto */
     font-family: 'Nohemi', sans-serif;
-    color: #000000;
+    color: #fffffd;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,6 +82,7 @@ body, html {
     height: auto;
     pointer-events: none;
     z-index: -1;
+    opacity: 0.51;
 }
 
 /* CABEÇALHO: Títulos à esquerda + 3 Logos à direita */
@@ -95,7 +96,7 @@ body, html {
 
 .titles h1 {
     font-size: 44px;
-    color: #000000;
+    color: #fffffd;
     margin-bottom: 14px;
     line-height: 1.15;
 }
@@ -106,15 +107,15 @@ body, html {
 
 .titles .title-light {
     font-weight: 400;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .subtitle-desc {
     font-size: 19px;
     font-weight: 400;
-    color: #000000;
+    color: #d9d9d9;
     line-height: 1.4;
-    max-width: 100%;
+    max-width: 850px;
 }
 
 /* Contentor dos 3 Logótipos no topo direito (Ajustado para caberem os 3) */
@@ -125,21 +126,15 @@ body, html {
     flex-shrink: 0;
 }
 
-/* 1º Logo: Lisboa Cultura */
-.logo-lc {
-    height: 78px; /* Compensa a margem interna da imagem quadrada */
-    width: auto;
-    object-fit: contain;
-}
 
-/* 2º Logo: Museu de Lisboa */
+/* 1º Logo: Museu de Lisboa */
 .logo-museu {
     height: 68px; /* Ligeiramente ajustado de 85px para equilibrar com os 3 logos */
     width: auto;
     object-fit: contain;
 }
 
-/* 3º Logo: Animalx */
+/* 2º Logo: Animalx */
 .logo-animalx {
     height: 76px; /* Ligeiramente ajustado de 95px para equilibrar com os 3 logos */
     width: auto;
@@ -175,8 +170,8 @@ body, html {
     width: 420px;
     height: 420px;
     border-radius: 50%;
-    background-color: #ced6db;
-    border: 22px solid #ced6db;
+    background-color: #75c2a5;
+    border: 22px solid #75c2a5;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -187,7 +182,7 @@ body, html {
 }
 
 .choice-item:hover .circle-frame {
-    border-color: #dce3e8;
+    border-color: #83d8b8;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -211,8 +206,8 @@ body, html {
     margin-top: 24px;
     font-family: 'Nohemi', sans-serif;
     font-size: 38px;
-    font-weight: 700;
-    color: #000000;
+    font-weight: 600;
+    color: #fffffd;
     text-align: center;
 }
 
@@ -248,10 +243,13 @@ body, html {
 }
 
 /* POSIÇÃO 1: No MAPA */
+
 #back-btn.pos-mapa {
     top: 25px;
-    left: 78%;
-    transform: translateX(-50%);
+    right: 210px; 
+    left: auto;   
+    transform: none; 
+    
     background-color: #6c75b7;
     color: #ffffff;
     border: 2px solid #ffffff;
@@ -264,7 +262,7 @@ body, html {
 
 #back-btn.pos-mapa:hover {
     background-color: #555d96;
-    transform: translateX(-50%) scale(1.05);
+    transform: scale(1.05); 
 }
 
 /* POSIÇÃO 2: No TAG ANIMALx */
